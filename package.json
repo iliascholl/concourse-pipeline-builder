@@ -1,0 +1,43 @@
+{
+  "name": "concourse-pipeline-builder",
+  "version": "1.0.0",
+  "description": "Typings, utilities and opinionated defaults that allow to define Concourse pipelines using TypeScript",
+  "repository": "https://github.com/iliascholl/concourse-pipeline-builder",
+  "author": "Ilia Scholl",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "bin": {
+    "concourse-pipeline-builder": "./lib/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint src/** --fix",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.21",
+    "@types/node": "^12.12.5",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": ">=1",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "jest && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|ts)": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
