@@ -1,10 +1,19 @@
 import { writeFileSync } from 'fs';
-import build from './index';
+import compile from './index';
 
 jest.mock('fs');
 
 test('should write the provided configuration to file', () => {
-    build({ some: 'config' });
+    const config = {
+        jobs: [
+            {
+                name: 'job',
+                plan: [{ get: 'resource' }, { put: 'resource' }],
+            },
+        ],
+    };
 
-    expect(writeFileSync).toBeCalledWith('./pipeline.yml', '{"some":"config"}');
+    compile(config);
+
+    expect(writeFileSync).toBeCalledWith('./pipeline.yml', JSON.stringify(config));
 });

@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint src/** --fix",
+    "lint": "eslint src/**/* --fix",
     "test": "jest"
   },
   "devDependencies": {
