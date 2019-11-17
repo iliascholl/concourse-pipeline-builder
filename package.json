@@ -1,6 +1,6 @@
 {
   "name": "concourse-pipeline-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typings, utilities and opinionated defaults that allow to define Concourse pipelines using TypeScript",
   "repository": "https://github.com/iliascholl/concourse-pipeline-builder",
   "author": "Ilia Scholl",
